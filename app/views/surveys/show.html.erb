@@ -1,5 +1,9 @@
 <% title "Survey" %>
 
+<% @survey.collaterals.each do |c| %>
+  <%= image_tag c.asset.url(:thumb) %>
+<% end %>
+
 <p>
   <strong>Name:</strong>
   <%= @survey.name %>
@@ -8,6 +12,9 @@
 <ol>
 <% for question in @survey.questions %>
   <li>
+  <% question.collaterals.each { |c| %>
+    <%= image_tag(c.asset.url(:small)) %>
+  <% } %>
     <%= question.content %>
     <ul>
     <% for answer in question.answers %>

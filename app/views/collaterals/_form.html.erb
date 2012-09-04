@@ -1,0 +1,17 @@
+<%= form_for(@collateral) do |f| %>
+  <% if @collateral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@collateral.errors.count, "error") %> prohibited this collateral from being saved:</h2>
+
+      <ul>
+      <% @collateral.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

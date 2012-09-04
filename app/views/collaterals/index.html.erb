@@ -1,0 +1,21 @@
+<h1>Listing collaterals</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @collaterals.each do |collateral| %>
+  <tr>
+    <td><%= link_to 'Show', collateral %></td>
+    <td><%= link_to 'Edit', edit_collateral_path(collateral) %></td>
+    <td><%= link_to 'Destroy', collateral, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Collateral', new_collateral_path %>
